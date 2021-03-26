@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  php-fpm:
+    image: php:8-fpm
+    ports:
+      - "9000:9000"
+    volumes:
+      - .:/srv/app
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    depends_on:
+      - php-fpm
+    ports:
+      - "1080:80"
+    volumes:
+      - .:/srv/app
+      - ./docker/caddy/Caddyfile:/etc/caddy/Caddyfile
+      - ./docker/caddy/data:/data
+      - ./docker/caddy/config:/config
