@@ -1,0 +1,17 @@
+{
+    local_certs
+}
+
+example.com.localhost {
+    redir https://www.example.com.localhost{uri}
+}
+
+www.example.com.localhost {
+    root * /srv/app/public
+    encode zstd gzip
+    php_fastcgi * php-fpm:9000
+    file_server
+}
+
+
+

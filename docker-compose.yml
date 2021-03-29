@@ -13,9 +13,10 @@ services:
     depends_on:
       - php-fpm
     ports:
-      - "1080:80"
+      - "80:80"
+      - "443:443"
     volumes:
       - .:/srv/app
-      - ./docker/caddy/Caddyfile:/etc/caddy/Caddyfile
+      - ./docker/caddy/Caddyfile.${ENV}:/etc/caddy/Caddyfile
       - ./docker/caddy/data:/data
       - ./docker/caddy/config:/config

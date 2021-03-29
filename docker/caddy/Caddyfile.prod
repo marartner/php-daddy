@@ -1,4 +1,8 @@
-localhost:80 {
+example.com {
+    redir https://www.example.com{uri}
+}
+
+www.example.com {
     root * /srv/app/public
     encode zstd gzip
     php_fastcgi * php-fpm:9000
