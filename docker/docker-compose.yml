@@ -6,7 +6,8 @@ services:
     ports:
       - "9000:9000"
     volumes:
-      - .:/srv/app
+      - ..:/srv/app
+      - /srv/app/docker/
   caddy:
     image: caddy:2-alpine
     restart: unless-stopped
@@ -16,7 +17,8 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - .:/srv/app
-      - ./docker/caddy/Caddyfile.${ENV}:/etc/caddy/Caddyfile
-      - ./docker/caddy/data:/data
-      - ./docker/caddy/config:/config
+      - ..:/srv/app
+      - /srv/app/docker/
+      - ./caddy/Caddyfile.${ENV}:/etc/caddy/Caddyfile
+      - ./caddy/data:/data
+      - ./caddy/config:/config

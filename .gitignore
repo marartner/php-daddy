@@ -1,7 +1,0 @@
-/docker/caddy/config/*
-!/docker/caddy/config/.gitkeep
-/docker/caddy/data/*
-!/docker/caddy/data/.gitkeep
-/docker/caddy/Caddyfile*.local
-/.idea
-.env*.local

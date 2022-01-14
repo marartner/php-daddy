@@ -1,0 +1,6 @@
+/caddy/config/*
+!/caddy/config/.gitkeep
+/caddy/data/*
+!/caddy/data/.gitkeep
+/caddy/Caddyfile*.local
+.env*.local
